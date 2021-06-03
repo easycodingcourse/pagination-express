@@ -15,7 +15,7 @@
     "js",
     "sequelize-pagination"
   ],
-  "author": "EasyCodingCourse.com",
+  "author": "http://easycodingcourse.com/author",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0",
