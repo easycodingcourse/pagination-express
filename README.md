@@ -1,15 +1,8 @@
 # pagination-express
 
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
-[![Build Status][travis-image]][travis-url]
-[![Test Coverage][coveralls-image]][coveralls-url]
-[![MIT License][license-image]][license-url]
-[![Slack][slack-image]][slack-url]
-
 > Node.js pagination-express is the complete pagination solution.
 
-**v1.0.0+**: As of `v1.0.0`, we short description write here.
+**v1.0.1**: As of `v1.0.1`
 
 ## Install
 
