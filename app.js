@@ -1,9 +1,8 @@
-require('dotenv').config()
 const express = require("express");
 const app = express();
 const port = 3000;
 const db = require("./connection/db");
-const { pagination } = require("./pagination");
+const { pagination } = require("./index");
 
 app.get("/users", (req, res) => {
   console.log("express");
