@@ -1,6 +1,6 @@
 {
   "name": "pagination-express",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "description": "pagination-express js ( sequelize ORM with mysql )",
   "main": "pagination.js",
   "scripts": {
