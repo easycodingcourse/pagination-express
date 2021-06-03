@@ -2,7 +2,7 @@
   "name": "pagination-express",
   "version": "1.0.0",
   "description": "pagination-express js ( sequelize ORM with mysql )",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
     "dev-node": "nodemon index.js",
