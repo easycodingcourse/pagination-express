@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const db = require("./connection/db");
-const { pagination } = require("./index");
+const { pagination } = require("./pagination");
 
 app.get("/users", (req, res) => {
   console.log("express");
