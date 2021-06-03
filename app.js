@@ -5,7 +5,6 @@ const db = require("./connection/db");
 const { pagination } = require("./pagination");
 
 app.get("/users", (req, res) => {
-  console.log("express");
   const Users = db.users;
   const query = {
     attributes:{

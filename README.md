@@ -37,7 +37,6 @@ const { pagination } = require("pagination-express");
 
 
   const query = {
-    attributes: ["firstName", "lastName"],
     where:{
       status:1
     },
@@ -95,7 +94,7 @@ app.get("/users", (req, res) => {
 
   // you can use all sequelize ORM query here........
   const query = {
-    attributes: ["firstName", "lastName"],
+    // attributes: ["firstName", "lastName"],
     where:{
       status:1
     },
