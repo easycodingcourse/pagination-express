@@ -2,7 +2,7 @@
 
 > Node.js pagination-express is the complete pagination solution.
 
-**v1.0.1**: As of `v1.0.1`
+**v1.0.2**: As of `v1.0.2`
 
 ## Install
 
