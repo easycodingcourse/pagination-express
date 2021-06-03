@@ -37,6 +37,9 @@ const { pagination } = require("pagination-express");
 
 
 
+
+## HOW TO USE
+
 ```js
 
 
@@ -52,8 +55,8 @@ const { pagination } = require("pagination-express");
     req: req,
     page: 2,
     limit: 5,
-    matatags: "paginationInfo", // Optional
-    lists: "userlist", // Optional
+    matatags: "paginationInfo", // Optional for changeing default name of matatags
+    lists: "userlist", // Optional for changeing default name of lists
     range: 5,  // Optional if need paging
   };
 
@@ -66,6 +69,7 @@ pagination(Users, option, { ...query }, (response) => {
 // Or
 
 // ## method 2
+// you need a async function to use it
 const response = await pagination(Users, option, { ...query });
 res.json({ payload: response });
 
@@ -140,7 +144,7 @@ app.get("/users", (req, res) => {
 
 {
   "payload": {
-    "paginationInfo": {
+    "matatags": {
       "status": true,
       "totalList": 101,
       "currentList": 5,
@@ -188,7 +192,7 @@ app.get("/users", (req, res) => {
         }
       ]
     },
-    "userlist": [
+    "list": [
       {
         "id": 96,
         "firstName": "demo95",
