@@ -3,9 +3,13 @@ const app = express();
 const port = 3000;
 const db = require("./connection/db");
 const { pagination } = require("./pagination");
+const Users = db.users;
+
 
 app.get("/users", (req, res) => {
-  const Users = db.users;
+
+  const {page,limit} = req.query
+  
   const query = {
     attributes:{
       exclude:['created_at','updated_at']
@@ -18,9 +22,9 @@ app.get("/users", (req, res) => {
 
   const option = {
     req: req,
-    page: 2,
-    limit: 5,
-    matatags: "paginationInfo", // Optional
+    page: page,
+    limit: limit,
+    metatags: "paginationInfo", // Optional
     lists: "userlist", // Optional
     range: 5,
   };

@@ -48,17 +48,17 @@ const getRouterInfo = (req) => {
     return paging;
   }
   
-  const getMatatag = ({ req, page, limit, total, foundList = null, range }) => {
+  const getmetatag = ({ req, page, limit, total, foundList = null, range }) => {
     const urlWithoutParams = getRouterInfo(req);
     let totalPage = Math.ceil(total / limit);
     if (totalPage < page) return { status: false, error: "page not found...." };
     let previousPageCount = page - 1;
     let previousPageUrl =
-      urlWithoutParams + "?page=" + previousPageCount + "&limit" + limit;
+      urlWithoutParams + "?page=" + previousPageCount + "&limit=" + limit;
     previousPageCount === 0 ? (previousPageCount = null) : null;
     let nextPageCount = page + 1;
     let nextPageUrl =
-      urlWithoutParams + "?page=" + nextPageCount + "&limit" + limit;
+      urlWithoutParams + "?page=" + nextPageCount + "&limit=" + limit;
     nextPageCount > totalPage ? (nextPageCount = null) : null;
   
     var ranges = null;
@@ -66,7 +66,7 @@ const getRouterInfo = (req) => {
       ranges = doPaging(page, range, totalPage, page - 1 * limit);
     }
   
-    matatag = {
+    metatag = {
       status: true,
       totalList: total,
       currentList: foundList,
@@ -81,7 +81,7 @@ const getRouterInfo = (req) => {
       },
       currentPage: {
         page,
-        url: urlWithoutParams + "?page=" + page + "&limit" + limit,
+        url: urlWithoutParams + "?page=" + page + "&limit=" + limit,
       },
       nextPage: {
         page: nextPageCount,
@@ -94,18 +94,18 @@ const getRouterInfo = (req) => {
       paging: ranges,
     };
   
-    !foundList ? delete matatag.foundList : null;
-    !range ? delete matatag.pageing : null;
-    return matatag;
+    !foundList ? delete metatag.foundList : null;
+    !range ? delete metatag.pageing : null;
+    return metatag;
   };
   
   const pagination = async (
     Model,
-    { req, page, limit, matatags, lists, range },
+    { req, page, limit, metatags, lists, range },
     query,
     callback
   ) => {
-    !matatags ? (matatags = "matatags") : null;
+    !metatags ? (metatags = "metatags") : null;
     !lists ? (lists = "lists") : null;
   
     if (!page) {
@@ -151,10 +151,10 @@ const getRouterInfo = (req) => {
     };
   
     !range ? delete metaObject.range : null;
-    const mts = getMatatag(metaObject);
+    const mts = getmetatag(metaObject);
   
     const response = {};
-    response[matatags] = mts;
+    response[metatags] = mts;
     response[lists] = rows;
   
     if (!callback) {
@@ -166,7 +166,7 @@ const getRouterInfo = (req) => {
   
   module.exports = {
     getOffset,
-    getMatatag,
+    getmetatag,
     pagination,
   };
   

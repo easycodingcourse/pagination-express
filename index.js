@@ -26,7 +26,7 @@ const server = http.createServer((req, res) => {
         req:req,
         page:1,
         limit:10,
-        matatags:'paginationInfo', // Optional
+        metatags:'paginationInfo', // Optional
         lists:"userlist",  // Optional
         range:5
       }

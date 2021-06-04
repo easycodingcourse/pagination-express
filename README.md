@@ -45,7 +45,7 @@ const { pagination } = require("pagination-express");
     req: req,
     page: 2,
     limit: 5,
-    matatags: "paginationInfo", // Optional for changeing default name of matatags
+    metatag: "paginationInfo", // Optional for changeing default name of metatag
     lists: "userlist", // Optional for changeing default name of lists
     range: 5,  // Optional if need paging
   };
@@ -103,6 +103,8 @@ app.get("/users", (req, res) => {
     req: req,
     page: page,
     limit: 10,   // give a limit
+    metatags: "paginationInfo", // Optional for change default name of metatags 
+    lists: "userlist", // Optional for change default name of list 
     range: 5
   };
 
@@ -134,7 +136,7 @@ app.get("/users", (req, res) => {
 
 {
   "payload": {
-    "matatags": {
+    "metatag": {
       "status": true,
       "totalList": 101,
       "currentList": 5,
@@ -149,15 +151,15 @@ app.get("/users", (req, res) => {
       },
       "currentPage": {
         "page": 2,
-        "url": "http://localhost/users?page=2&limit5"
+        "url": "http://localhost/users?page=2&limit=5"
       },
       "nextPage": {
         "page": 3,
-        "url": "http://localhost/users?page=3&limit5"
+        "url": "http://localhost/users?page=3&limit=5"
       },
       "previousPage": {
         "page": 1,
-        "url": "http://localhost/users?page=1&limit5"
+        "url": "http://localhost/users?page=1&limit=5"
       },
       "paging": [
         {
@@ -218,7 +220,7 @@ app.get("/users", (req, res) => {
 
 
 ## Change default name of object field
-1. matatags
+1. metatag
 2. list
 
 
@@ -229,7 +231,7 @@ app.get("/users", (req, res) => {
     req: req,
     page: page,
     limit: 10,
-    matatags: "paginationInfo", // Optional for change default name of matatags 
+    metatag: "paginationInfo", // Optional for change default name of metatag 
     lists: "userlist", // Optional for change default name of list 
     range: 5
   };
