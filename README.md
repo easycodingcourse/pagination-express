@@ -220,7 +220,7 @@ app.get("/users", (req, res) => {
 
 
 ## Change default name of object field
-1. metatag
+1. metatags
 2. list
 
 
@@ -231,7 +231,7 @@ app.get("/users", (req, res) => {
     req: req,
     page: page,
     limit: 10,
-    metatag: "paginationInfo", // Optional for change default name of metatag 
+    metatags: "paginationInfo", // Optional for change default name of metatag 
     lists: "userlist", // Optional for change default name of list 
     range: 5
   };
